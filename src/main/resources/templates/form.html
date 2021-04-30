@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<form action="#" method="post" th:action="@{/}" th:object="${numberForm}">
+    <label for="number">Number to check:</label><br>
+    <input id="number" th:field="*{number}" type="text"/><br>
+    <span th:errors="*{number}" th:if="${#fields.hasErrors('number')}">Number error</span><br>
+    <p th:text="*{result}" />
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
